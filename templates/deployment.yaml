@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: {{ include "what-the-helm.fullname" . }}
   labels:
-{{ include "drupal.custom.labels" .  | indent 4 }}
+    app: what_the_helm
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
